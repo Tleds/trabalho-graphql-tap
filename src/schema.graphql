@@ -1,0 +1,17 @@
+type Order {
+  id: ID!,
+  produto: String!,
+  quantidade: Int!,
+  preco: Float!,
+}
+
+type Query {
+  orders: [Order!]!
+  order(id: ID!): Order
+}
+
+type Mutation {
+  createOrder(produto: String!, quantidade: Int!, preco: Float!): Order,
+  updateOrder(id: ID!, produto: String!, quantidade: Int!, preco: Float!): Order,
+  deleteOrder(id: ID!): Order,
+}
